@@ -16,7 +16,7 @@
     <c:forEach var="c" items="${countries}">
         <tr>
             <td>${c.id}</td>
-            <td>${c.label}</td>
+            <td>${c.countryName}</td>
             <td>${c.isoAlpha3}</td>
             <td>${c.isActive}</td>
             <td>

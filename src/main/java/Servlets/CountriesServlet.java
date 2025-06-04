@@ -114,7 +114,7 @@ public class CountriesServlet extends HttpServlet {
 
             }else{
                 Country country = countryService.GetById(Integer.parseInt(idParam));
-                country.setLabel(nameCountry);
+                country.setCountryName(nameCountry);
                 country.setIsoAlpha3(isoCountry);
                 countryService.Update(country, em);
                 transaction.commit();
