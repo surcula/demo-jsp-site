@@ -39,6 +39,16 @@ public class CountriesServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
         String idParam = request.getParameter("idCountry");
+        String editParam = request.getParameter("edit");
+
+
+        if(editParam != null){
+            Country country = countryService.GetOne(Integer.parseInt(editParam));
+            request.setAttribute("country", country);
+            request.setAttribute("content", "addCountry.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/template.jsp");
+            dispatcher.forward(request, response);
+        }
         if (idParam != null){
             Country countries = countryService.GetOne(Integer.parseInt(idParam));
             request.setAttribute("countries", countries);

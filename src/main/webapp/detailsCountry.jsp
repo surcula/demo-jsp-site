@@ -10,7 +10,7 @@
         </tr>
         <tr>
             <th>Nom</th>
-            <td>${countries.label}</td>
+            <td>${countries.countryName}</td>
         </tr>
         <tr>
             <th>Code ISO</th>
@@ -22,6 +22,10 @@
                 <c:when test="${countries.isActive}">Oui</c:when>
                 <c:otherwise>Non</c:otherwise>
             </c:choose></td>
+        </tr>
+        <tr>
+            <a href="${pageContext.request.contextPath}/countries?edit=${countries.id}" class="btn">Modifier</a>
+
         </tr>
     </table>
 

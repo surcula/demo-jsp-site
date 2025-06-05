@@ -1,8 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-
 <h1>Liste des pays</h1>
-
 <a href="template.jsp?content=addCountry.jsp" class="btn">Ajouter un pays</a>
 
 <table id="mainTable" >
