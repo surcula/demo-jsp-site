@@ -1,13 +1,14 @@
 package services;
 
 import com.example.demo1.Field;
-import interfaces.FieldService;
+import com.example.demo1.SportField;
+import interfaces.SportFieldService;
 
 import javax.persistence.EntityManager;
 import java.util.Collections;
 import java.util.List;
 
-public class SportFieldServiceImpl implements FieldService {
+public class SportFieldServiceImpl implements SportFieldService {
     private EntityManager em;
 
     public SportFieldServiceImpl(EntityManager em) {
@@ -15,27 +16,27 @@ public class SportFieldServiceImpl implements FieldService {
     }
 
     @Override
-    public void create(Field field) {
+    public void create(SportField sportField) {
 
     }
 
     @Override
-    public void update(Field field) {
+    public void update(SportField sportField) {
 
     }
 
     @Override
-    public void delete(Field field) {
+    public void delete(SportField sportField) {
 
     }
 
     @Override
-    public Field getOneById(int id) {
+    public SportField getOneById(int id) {
         return null;
     }
 
     @Override
-    public List<Field> getAllFields() {
+    public List<SportField> getAllSportFields() {
         return Collections.emptyList();
     }
 }

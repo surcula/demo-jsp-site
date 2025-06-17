@@ -1,7 +1,11 @@
 package services;
 
 import com.example.demo1.Field;
+import dto.FieldCreateForm;
+import dto.FieldUpdateForm;
 import interfaces.FieldService;
+import mappers.FieldMapper;
+import org.eclipse.persistence.jpa.jpql.parser.NullExpression;
 
 import javax.persistence.EntityManager;
 import java.util.Collections;
@@ -15,15 +19,16 @@ public class FieldServiceImpl implements FieldService {
     }
 
     @Override
-    public void create(Field field) {
-
+    public void create(FieldCreateForm fieldCreateForm) {
+        Field field = FieldMapper.fromCreateForm(fieldCreateForm);
         em.persist(field);
     }
 
     @Override
-    public void update(Field field) {
-
-        em.merge(field);
+    public void update(FieldUpdateForm fieldUpdateForm) {
+        Field field = em.find(Field.class, fieldUpdateForm.getId());
+        if(field == null)throw new IllegalArgumentException("not found");
+        FieldMapper.fromUpdateForm(field,fieldUpdateForm);
     }
 
     @Override
@@ -35,11 +40,13 @@ public class FieldServiceImpl implements FieldService {
 
     @Override
     public Field getOneById(int id) {
+
         return null;
     }
 
     @Override
     public List<Field> getAllFields() {
+
         return Collections.emptyList();
     }
 }

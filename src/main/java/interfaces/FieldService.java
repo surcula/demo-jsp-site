@@ -1,21 +1,23 @@
 package interfaces;
 
 import com.example.demo1.Field;
+import dto.FieldCreateForm;
+import dto.FieldUpdateForm;
 
 import java.util.List;
 
 public interface FieldService {
     /**
      * Create a new field
-     * @param field
+     * @param fieldCreateForm
      */
-    void create(Field field) ;
+    void create(FieldCreateForm fieldCreateForm) ;
 
     /**
      * Update an existing field
-     * @param field
+     * @param fieldUpdateForm
      */
-    void update(Field field) ;
+    void update(FieldUpdateForm fieldUpdateForm) ;
 
     /**
      * soft-delete a field by setting its isActive flag to false
