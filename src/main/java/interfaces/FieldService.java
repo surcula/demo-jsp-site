@@ -21,9 +21,9 @@ public interface FieldService {
 
     /**
      * soft-delete a field by setting its isActive flag to false
-     * @param field
+     * @param id
      */
-    void delete(Field field) ;
+    void delete(int id) ;
 
     /**
      * retrieves a field by its id

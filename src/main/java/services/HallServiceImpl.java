@@ -10,7 +10,7 @@ import java.util.List;
 
 public class HallServiceImpl implements interfaces.HallService {
 
-    private EntityManager em;
+    private final EntityManager em;
 
     public HallServiceImpl(EntityManager em) {
         this.em = em;
@@ -24,14 +24,16 @@ public class HallServiceImpl implements interfaces.HallService {
     @Override
     public void update(HallUpdateForm hallUpdateForm) {
         Hall hall = em.find(Hall.class, hallUpdateForm.getId());
-        if (hall != null) throw new IllegalArgumentException("Not found");
+        if (hall == null) throw new IllegalArgumentException("Not found");
         HallMapper.fromUpdateForm(hall, hallUpdateForm);
     }
 
     @Override
-    public void delete(Hall hall) {
+    public void delete(int id) {
+        Hall hall = em.find(Hall.class, id);
+        if (hall == null) throw new IllegalArgumentException("Not found");
+        if (!hall.getIsActive()) throw new IllegalStateException("Hall with id " + id + " is not active");
         hall.setIsActive(false);
-        em.merge(hall);
     }
 
     @Override

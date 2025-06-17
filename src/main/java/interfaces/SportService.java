@@ -20,9 +20,9 @@ public interface SportService {
 
     /**
      * soft-delete a sport by setting its isActive flag to false
-     * @param sport
+     * @param id
      */
-    void delete(Sport sport) ;
+    void delete(int id) ;
 
     /**
      * retrieve a sport by its Id

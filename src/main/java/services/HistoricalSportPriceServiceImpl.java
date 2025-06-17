@@ -4,38 +4,22 @@ import com.example.demo1.HistoricalSportPrice;
 import interfaces.HistoricalSportPriceService;
 
 import javax.persistence.EntityManager;
-import java.util.Collections;
 import java.util.List;
 
 public class HistoricalSportPriceServiceImpl implements HistoricalSportPriceService {
-    private EntityManager em;
+    private final EntityManager em;
 
     public HistoricalSportPriceServiceImpl(EntityManager em) {
         this.em = em;
     }
 
     @Override
-    public void create(HistoricalSportPrice historicalSportPrice) {
-
-    }
-
-    @Override
-    public void update(HistoricalSportPrice historicalSportPrice) {
-
-    }
-
-    @Override
-    public void delete(HistoricalSportPrice historicalSportPrice) {
-
-    }
-
-    @Override
     public HistoricalSportPrice getOneById(int id) {
-        return null;
+        return em.find(HistoricalSportPrice.class, id);
     }
 
     @Override
     public List<HistoricalSportPrice> getAllHistoricalSportPrices() {
-        return Collections.emptyList();
+        return em.createQuery("Select h from HistoricalSportPrice h", HistoricalSportPrice.class).getResultList();
     }
 }

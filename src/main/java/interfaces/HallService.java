@@ -22,9 +22,9 @@ public interface HallService {
 
     /**
      * soft-delete a hall by setting its isActive flag to false
-     * @param hall
+     * @param id
      */
-    void delete(Hall hall) ;
+    void delete(int id) ;
 
     /**
      * retrieves a hall by its id

@@ -21,9 +21,9 @@ public interface ClosureService {
 
     /**
      * soft-delete a closure by setting its isActive flag to false
-     * @param closure
+     * @param id
      */
-    void delete(Closure closure) ;
+    void delete(int id) ;
 
     /**
      * retrieves a closure by its Id

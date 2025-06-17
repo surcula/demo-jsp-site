@@ -5,10 +5,8 @@ import dto.FieldCreateForm;
 import dto.FieldUpdateForm;
 import interfaces.FieldService;
 import mappers.FieldMapper;
-import org.eclipse.persistence.jpa.jpql.parser.NullExpression;
 
 import javax.persistence.EntityManager;
-import java.util.Collections;
 import java.util.List;
 
 public class FieldServiceImpl implements FieldService {
@@ -31,21 +29,22 @@ public class FieldServiceImpl implements FieldService {
     }
 
     @Override
-    public void delete(Field field) {
+    public void delete(int id) {
 
+        Field field = em.find(Field.class, id);
+        if(field == null) throw new IllegalArgumentException("Not found");
+        if (!field.getIsActive()) throw new IllegalStateException("Field with id " + id + " is not active");
         field.setIsActive(false);
-        em.merge(field);
     }
 
     @Override
     public Field getOneById(int id) {
-
-        return null;
+        return em.find(Field.class, id);
     }
 
     @Override
     public List<Field> getAllFields() {
 
-        return Collections.emptyList();
+        return em.createQuery("select f from Field f", Field.class).getResultList();
     }
 }
