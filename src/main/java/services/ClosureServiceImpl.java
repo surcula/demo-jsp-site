@@ -19,8 +19,7 @@ public class ClosureServiceImpl implements ClosureService {
 
     @Override
     public void create(ClosureCreateForm closureCreateForm) {
-        Closure closure = ClosureMapper.fromCreateForm(closureCreateForm);
-        em.persist(closure);
+        em.persist(ClosureMapper.fromCreateForm(closureCreateForm));
     }
 
     @Override

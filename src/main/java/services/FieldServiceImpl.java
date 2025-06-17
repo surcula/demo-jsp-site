@@ -20,8 +20,7 @@ public class FieldServiceImpl implements FieldService {
 
     @Override
     public void create(FieldCreateForm fieldCreateForm) {
-        Field field = FieldMapper.fromCreateForm(fieldCreateForm);
-        em.persist(field);
+        em.persist(FieldMapper.fromCreateForm(fieldCreateForm));
     }
 
     @Override

@@ -1,6 +1,9 @@
 package services;
 
 import com.example.demo1.Hall;
+import dto.HallCreateForm;
+import dto.HallUpdateForm;
+import mappers.HallMapper;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -14,13 +17,15 @@ public class HallServiceImpl implements interfaces.HallService {
     }
 
     @Override
-    public void create(Hall hall) {
-        em.persist(hall);
+    public void create(HallCreateForm hallCreateForm) {
+        em.persist(HallMapper.fromCreateForm(hallCreateForm));
     }
 
     @Override
-    public void update(Hall hall) {
-        em.merge(hall);
+    public void update(HallUpdateForm hallUpdateForm) {
+        Hall hall = em.find(Hall.class, hallUpdateForm.getId());
+        if (hall != null) throw new IllegalArgumentException("Not found");
+        HallMapper.fromUpdateForm(hall, hallUpdateForm);
     }
 
     @Override
