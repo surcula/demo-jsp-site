@@ -5,9 +5,9 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "roles_authorizations")
-public class RolesAuthorization {
+public class RoleAuthorization {
     @EmbeddedId
-    private RolesAuthorizationId id;
+    private RoleAuthorizationId id;
 
     @MapsId("roleId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -26,13 +26,13 @@ public class RolesAuthorization {
     private Instant updatedAt;
 
     @Column(name = "is_active", nullable = false)
-    private Boolean isActive = false;
+    private Boolean isActive = true;
 
-    public RolesAuthorizationId getId() {
+    public RoleAuthorizationId getId() {
         return id;
     }
 
-    public void setId(RolesAuthorizationId id) {
+    public void setId(RoleAuthorizationId id) {
         this.id = id;
     }
 

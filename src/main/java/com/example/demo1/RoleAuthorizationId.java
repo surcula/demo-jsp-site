@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
-public class RolesAuthorizationId implements Serializable {
+public class RoleAuthorizationId implements Serializable {
     private static final long serialVersionUID = -1759716054966425727L;
     @Column(name = "role_id", nullable = false)
     private Integer roleId;
@@ -34,7 +34,7 @@ public class RolesAuthorizationId implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RolesAuthorizationId entity = (RolesAuthorizationId) o;
+        RoleAuthorizationId entity = (RoleAuthorizationId) o;
         return Objects.equals(this.roleId, entity.roleId) &&
                 Objects.equals(this.authorizationId, entity.authorizationId);
     }

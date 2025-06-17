@@ -1,6 +1,6 @@
-package Servlets;
+package servlets;
 
-import Services.CountryService;
+import services.CountryService;
 import com.example.demo1.Country;
 
 import javax.persistence.EntityManager;

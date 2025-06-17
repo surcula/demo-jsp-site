@@ -5,7 +5,7 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "sports_fields")
-public class SportsField {
+public class SportField {
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
@@ -31,7 +31,7 @@ public class SportsField {
     private Integer day;
 
     @Column(name = "is_active", nullable = false)
-    private Boolean isActive = false;
+    private Boolean isActive = true;
 
     public Integer getId() {
         return id;

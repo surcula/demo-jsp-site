@@ -21,7 +21,7 @@ public class Country {
     private String isoAlpha3;
 
     @Column(name = "is_active", nullable = false)
-    private Boolean isActive;
+    private Boolean isActive = true;
 
     public Integer getId() {
         return id;

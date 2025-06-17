@@ -76,8 +76,8 @@ CREATE TABLE IF NOT EXISTS `cities` (
 -- Structure de la table `closes`
 --
 
-DROP TABLE IF EXISTS `closes`;
-CREATE TABLE IF NOT EXISTS `closes` (
+DROP TABLE IF EXISTS `closures`;
+CREATE TABLE IF NOT EXISTS `closures` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,

@@ -5,9 +5,9 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "orders_discounts")
-public class OrdersDiscount {
+public class OrderDiscount {
     @EmbeddedId
-    private OrdersDiscountId id;
+    private OrderDiscountId id;
 
     @MapsId("orderId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -26,13 +26,13 @@ public class OrdersDiscount {
     private Instant updatedAt;
 
     @Column(name = "is_active", nullable = false)
-    private Boolean isActive = false;
+    private Boolean isActive = true;
 
-    public OrdersDiscountId getId() {
+    public OrderDiscountId getId() {
         return id;
     }
 
-    public void setId(OrdersDiscountId id) {
+    public void setId(OrderDiscountId id) {
         this.id = id;
     }
 

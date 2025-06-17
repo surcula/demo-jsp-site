@@ -6,13 +6,21 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
-public class OrdersDiscountId implements Serializable {
-    private static final long serialVersionUID = -8018566453984189152L;
+public class OrderSubscriptionId implements Serializable {
+    private static final long serialVersionUID = -3607508002503065242L;
+    @Column(name = "subscription_id", nullable = false)
+    private Integer subscriptionId;
+
     @Column(name = "order_id", nullable = false)
     private Integer orderId;
 
-    @Column(name = "discount_id", nullable = false)
-    private Integer discountId;
+    public Integer getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    public void setSubscriptionId(Integer subscriptionId) {
+        this.subscriptionId = subscriptionId;
+    }
 
     public Integer getOrderId() {
         return orderId;
@@ -22,26 +30,18 @@ public class OrdersDiscountId implements Serializable {
         this.orderId = orderId;
     }
 
-    public Integer getDiscountId() {
-        return discountId;
-    }
-
-    public void setDiscountId(Integer discountId) {
-        this.discountId = discountId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        OrdersDiscountId entity = (OrdersDiscountId) o;
+        OrderSubscriptionId entity = (OrderSubscriptionId) o;
         return Objects.equals(this.orderId, entity.orderId) &&
-                Objects.equals(this.discountId, entity.discountId);
+                Objects.equals(this.subscriptionId, entity.subscriptionId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderId, discountId);
+        return Objects.hash(orderId, subscriptionId);
     }
 
 }

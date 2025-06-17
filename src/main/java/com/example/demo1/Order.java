@@ -25,7 +25,7 @@ public class Order {
     private User user;
 
     @Column(name = "is_active", nullable = false)
-    private Boolean isActive = false;
+    private Boolean isActive = true;
 
     public Integer getId() {
         return id;

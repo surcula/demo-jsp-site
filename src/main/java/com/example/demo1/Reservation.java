@@ -36,10 +36,10 @@ public class Reservation {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sports_field_id")
-    private SportsField sportsField;
+    private SportField sportField;
 
     @Column(name = "is_active", nullable = false)
-    private Boolean isActive = false;
+    private Boolean isActive = true;
 
     public Integer getId() {
         return id;
@@ -105,12 +105,12 @@ public class Reservation {
         this.user = user;
     }
 
-    public SportsField getSportsField() {
-        return sportsField;
+    public SportField getSportsField() {
+        return sportField;
     }
 
-    public void setSportsField(SportsField sportsField) {
-        this.sportsField = sportsField;
+    public void setSportsField(SportField sportField) {
+        this.sportField = sportField;
     }
 
     public Boolean getIsActive() {
