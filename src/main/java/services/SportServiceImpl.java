@@ -1,11 +1,12 @@
 package services;
 
-import com.example.demo1.Closure;
 import com.example.demo1.Sport;
+import dto.SportCreateForm;
+import dto.SportUpdateForm;
 import interfaces.SportService;
+import mappers.SportMapper;
 
 import javax.persistence.EntityManager;
-import java.util.Collections;
 import java.util.List;
 
 public class SportServiceImpl implements SportService {
@@ -16,13 +17,16 @@ public class SportServiceImpl implements SportService {
     }
 
     @Override
-    public void create(Sport sport) {
-
+    public void create(SportCreateForm sportCreateForm) {
+        em.persist(SportMapper.fromCreateForm(sportCreateForm));
     }
 
     @Override
-    public void update(Sport sport) {
+    public void update(SportUpdateForm sportUpdateForm) {
 
+        Sport sport = em.find(Sport.class, sportUpdateForm.getId());
+        if (sport == null) throw new IllegalArgumentException("Sport with id " + sport.getId() + " not found");
+        SportMapper.fromUpdateForm(sport, sportUpdateForm);
     }
 
     @Override

@@ -1,6 +1,8 @@
 package interfaces;
 
 import com.example.demo1.Sport;
+import dto.SportCreateForm;
+import dto.SportUpdateForm;
 
 import java.util.List;
 
@@ -8,15 +10,15 @@ public interface SportService {
 
     /**
      * Create a new sport
-     * @param sport
+     * @param sportCreateForm
      */
-    void create(Sport sport) ;
+    void create(SportCreateForm sportCreateForm) ;
 
     /**
      * Update an existing sport
-     * @param sport
+     * @param sportUpdateForm
      */
-    void update(Sport sport) ;
+    void update(SportUpdateForm sportUpdateForm) ;
 
     /**
      * soft-delete a sport by setting its isActive flag to false
