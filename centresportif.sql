@@ -173,6 +173,9 @@ DROP TABLE IF EXISTS `halls`;
 CREATE TABLE IF NOT EXISTS `halls` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `hall_name` varchar(255) NOT NULL,
+    `width` decimal(5,2) NOT NULL,
+    `length` decimal(5,2) NOT NULL,
+    `height` decimal(5,2) NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
