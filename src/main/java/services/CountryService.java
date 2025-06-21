@@ -1,6 +1,6 @@
 package services;
 
-import com.example.demo1.Country;
+import entities.Country;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -60,7 +60,7 @@ public class CountryService {
      * @param em
      */
     public void RemoveById(Country country, EntityManager em) {
-        country.setIsActive(false);
+        country.setActive(false);
         em.merge(country);
     }
 

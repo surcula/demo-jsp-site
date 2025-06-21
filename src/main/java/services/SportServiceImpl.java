@@ -1,8 +1,7 @@
 package services;
 
-import com.example.demo1.Sport;
+import entities.Sport;
 import dto.SportCreateForm;
-import dto.SportUpdateForm;
 import interfaces.SportService;
 import mappers.SportMapper;
 
@@ -22,19 +21,13 @@ public class SportServiceImpl implements SportService {
     }
 
     @Override
-    public void update(SportUpdateForm sportUpdateForm) {
-
-        Sport sport = em.find(Sport.class, sportUpdateForm.getId());
-        if (sport == null) throw new IllegalArgumentException("Sport with id " + sport.getId() + " not found");
-        SportMapper.fromUpdateForm(sport, sportUpdateForm);
+    public void update(Sport sport) {
+        em.merge(sport);
     }
 
     @Override
-    public void delete(int id) {
-        Sport sport = em.find(Sport.class, id);
-        if (sport == null) throw new IllegalArgumentException("Sport with id " + id + " not found");
-        if(!sport.getIsActive()) throw new IllegalArgumentException("Sport with id " + id + " is not active");
-        sport.setIsActive(false);
+    public void delete(Sport sport) {
+        em.merge(sport);
     }
 
     @Override

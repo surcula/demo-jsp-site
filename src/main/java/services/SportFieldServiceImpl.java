@@ -1,8 +1,7 @@
 package services;
 
-import com.example.demo1.SportField;
+import entities.SportField;
 import dto.SportFieldCreateForm;
-import dto.SportFieldUpdateForm;
 import interfaces.SportFieldService;
 import mappers.SportFieldMapper;
 
@@ -22,20 +21,14 @@ public class SportFieldServiceImpl implements SportFieldService {
     }
 
     @Override
-    public void update(SportFieldUpdateForm sportFieldUpdateForm) {
-        SportField sportField = em.find(SportField.class, sportFieldUpdateForm.getId());
-        if (sportField == null) throw new IllegalArgumentException("Not Found");
-        SportFieldMapper.fromUpdateForm(sportField, sportFieldUpdateForm);
+    public void update(SportField sportField) {
+        em.merge(sportField);
 
     }
 
     @Override
-    public void delete(int id) {
-
-        SportField sportField = em.find(SportField.class, id);
-        if (sportField == null) throw new IllegalArgumentException("Not Found");
-        if (!sportField.getIsActive()) throw new IllegalStateException("sportField with id " + id + " is not active");
-        sportField.setIsActive(false);
+    public void delete(SportField sportField) {
+        em.merge(sportField);
     }
 
     @Override

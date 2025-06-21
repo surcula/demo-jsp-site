@@ -2,32 +2,31 @@ package dto;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
-import java.math.BigDecimal;
 
 public class SportUpdateForm {
 
-    private Integer id;
+    private int id;
 
     private String sportName;
 
-    private Boolean isActive = true;
+    private boolean active = true;
 
-    private BigDecimal price;
+    private double price;
 
-    public BigDecimal getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -39,12 +38,12 @@ public class SportUpdateForm {
         this.sportName = sportName;
     }
 
-    public Boolean getIsActive() {
-        return isActive;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
 }

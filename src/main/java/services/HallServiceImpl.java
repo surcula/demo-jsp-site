@@ -1,8 +1,7 @@
 package services;
 
-import com.example.demo1.Hall;
+import entities.Hall;
 import dto.HallCreateForm;
-import dto.HallUpdateForm;
 import mappers.HallMapper;
 
 import javax.persistence.EntityManager;
@@ -22,18 +21,13 @@ public class HallServiceImpl implements interfaces.HallService {
     }
 
     @Override
-    public void update(HallUpdateForm hallUpdateForm) {
-        Hall hall = em.find(Hall.class, hallUpdateForm.getId());
-        if (hall == null) throw new IllegalArgumentException("Not found");
-        HallMapper.fromUpdateForm(hall, hallUpdateForm);
+    public void update(Hall hall) {
+        em.merge(hall);
     }
 
     @Override
-    public void delete(int id) {
-        Hall hall = em.find(Hall.class, id);
-        if (hall == null) throw new IllegalArgumentException("Not found");
-        if (!hall.getIsActive()) throw new IllegalStateException("Hall with id " + id + " is not active");
-        hall.setIsActive(false);
+    public void delete(Hall hall) {
+        em.merge(hall);
     }
 
     @Override

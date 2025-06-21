@@ -1,6 +1,6 @@
 package interfaces;
 
-import com.example.demo1.Sport;
+import entities.Sport;
 import dto.SportCreateForm;
 import dto.SportUpdateForm;
 
@@ -16,15 +16,15 @@ public interface SportService {
 
     /**
      * Update an existing sport
-     * @param sportUpdateForm
+     * @param sport
      */
-    void update(SportUpdateForm sportUpdateForm) ;
+    void update(Sport sport) ;
 
     /**
      * soft-delete a sport by setting its isActive flag to false
-     * @param id
+     * @param sport
      */
-    void delete(int id) ;
+    void delete(Sport sport) ;
 
     /**
      * retrieve a sport by its Id

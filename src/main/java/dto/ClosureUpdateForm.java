@@ -1,6 +1,6 @@
 package dto;
 
-import com.example.demo1.SportField;
+import entities.SportField;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
@@ -29,13 +29,12 @@ public class ClosureUpdateForm {
     public void setSportField(SportField sportField) {
         this.sportField = sportField;
     }
-
-    public Boolean getIsActive() {
-        return isActive;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setIsActive(Boolean active) {
-        isActive = active;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public int getId() {
@@ -58,5 +57,5 @@ public class ClosureUpdateForm {
     @NotNull(message = "SportField is required")
     private SportField sportField;
 
-    private Boolean isActive = true;
+    private boolean active = true;
 }

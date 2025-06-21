@@ -1,12 +1,9 @@
 package mappers;
 
-import com.example.demo1.Hall;
-import dto.FieldUpdateForm;
 import dto.HallCreateForm;
-import dto.HallUpdateForm;
+import entities.Hall;
 
 public class HallMapper {
-
     /**
      * Mapper HallCreateForm to Hall
      * @param hallCreateForm
@@ -14,18 +11,9 @@ public class HallMapper {
      */
     public static Hall fromCreateForm(HallCreateForm hallCreateForm) {
         Hall hall = new Hall();
-        hall.setIsActive(hallCreateForm.getIsActive());
+        hall.setActive(hallCreateForm.isActive());
         hall.setHallName(hallCreateForm.getHallName());
         return hall;
     }
 
-    /**
-     * Update Hall
-     * @param hall
-     * @param hallUpdateForm
-     */
-    public static void fromUpdateForm(Hall hall, HallUpdateForm hallUpdateForm) {
-        hall.setHallName(hallUpdateForm.getHallName());
-        hall.setIsActive(hallUpdateForm.getIsActive());
-    }
 }

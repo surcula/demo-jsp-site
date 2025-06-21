@@ -1,8 +1,7 @@
 package interfaces;
 
 import dto.ClosureCreateForm;
-import com.example.demo1.Closure;
-import dto.ClosureUpdateForm;
+import entities.Closure;
 
 import java.util.List;
 
@@ -15,15 +14,15 @@ public interface ClosureService {
 
     /**
      * Update an existing closure
-     * @param closureUpdateForm
+     * @param closure
      */
-    void update(ClosureUpdateForm  closureUpdateForm) ;
+    void update(Closure  closure) ;
 
     /**
      * soft-delete a closure by setting its isActive flag to false
-     * @param id
+     * @param closure
      */
-    void delete(int id) ;
+    void delete(Closure closure) ;
 
     /**
      * retrieves a closure by its Id

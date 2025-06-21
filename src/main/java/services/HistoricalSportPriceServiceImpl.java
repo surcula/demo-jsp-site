@@ -1,6 +1,6 @@
 package services;
 
-import com.example.demo1.HistoricalSportPrice;
+import entities.HistoricalSportPrice;
 import interfaces.HistoricalSportPriceService;
 
 import javax.persistence.EntityManager;

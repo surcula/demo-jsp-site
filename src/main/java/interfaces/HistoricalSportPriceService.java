@@ -1,6 +1,6 @@
 package interfaces;
 
-import com.example.demo1.HistoricalSportPrice;
+import entities.HistoricalSportPrice;
 
 import java.util.List;
 

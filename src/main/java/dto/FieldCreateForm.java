@@ -1,8 +1,6 @@
 package dto;
 
-import com.example.demo1.Hall;
-
-import javax.persistence.*;
+import entities.Hall;
 
 public class FieldCreateForm {
 
@@ -10,7 +8,7 @@ public class FieldCreateForm {
 
     private Hall hall;
 
-    private Boolean isActive = true;
+    private boolean active = true;
 
     public String getFieldName() {
         return fieldName;
@@ -28,11 +26,11 @@ public class FieldCreateForm {
         this.hall = hall;
     }
 
-    public Boolean getIsActive() {
-        return isActive;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

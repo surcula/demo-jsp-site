@@ -1,8 +1,7 @@
 package services;
 
 import dto.ClosureCreateForm;
-import com.example.demo1.Closure;
-import dto.ClosureUpdateForm;
+import entities.Closure;
 import interfaces.ClosureService;
 import mappers.ClosureMapper;
 
@@ -23,18 +22,13 @@ public class ClosureServiceImpl implements ClosureService {
     }
 
     @Override
-    public void update(ClosureUpdateForm closureUpdateForm) {
-        Closure closure = em.find(Closure.class, closureUpdateForm.getId());
-        if(closure == null) throw new IllegalArgumentException("Not found");
-        ClosureMapper.fromUpdateForm(closure, closureUpdateForm);
+    public void update(Closure closure) {
+        em.merge(closure);
     }
 
     @Override
-    public void delete(int id) {
-        Closure closure = em.find(Closure.class, id);
-        if(closure == null) throw new IllegalArgumentException("Not found");
-        if (!closure.getIsActive()) throw new IllegalStateException("Closure with id " + id + " is not active");
-        closure.setIsActive(false);
+    public void delete(Closure closure) {
+        em.merge(closure);
     }
 
     @Override

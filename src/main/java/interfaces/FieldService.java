@@ -1,8 +1,7 @@
 package interfaces;
 
-import com.example.demo1.Field;
+import entities.Field;
 import dto.FieldCreateForm;
-import dto.FieldUpdateForm;
 
 import java.util.List;
 
@@ -15,15 +14,15 @@ public interface FieldService {
 
     /**
      * Update an existing field
-     * @param fieldUpdateForm
+     * @param field
      */
-    void update(FieldUpdateForm fieldUpdateForm) ;
+    void update(Field field) ;
 
     /**
      * soft-delete a field by setting its isActive flag to false
-     * @param id
+     * @param field
      */
-    void delete(int id) ;
+    void delete(Field field) ;
 
     /**
      * retrieves a field by its id

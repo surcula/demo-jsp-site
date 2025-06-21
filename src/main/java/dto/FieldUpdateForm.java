@@ -1,21 +1,21 @@
 package dto;
 
-import com.example.demo1.Hall;
+import entities.Hall;
 
 public class FieldUpdateForm {
-    private Integer id;
+    private int id;
 
     private String fieldName;
 
     private Hall hall;
 
-    private Boolean isActive = true;
+    private boolean active = true;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -34,12 +34,11 @@ public class FieldUpdateForm {
     public void setHall(Hall hall) {
         this.hall = hall;
     }
-
-    public Boolean getIsActive() {
-        return isActive;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

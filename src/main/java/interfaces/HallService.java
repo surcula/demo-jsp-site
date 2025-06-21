@@ -1,8 +1,7 @@
 package interfaces;
 
-import com.example.demo1.Hall;
+import entities.Hall;
 import dto.HallCreateForm;
-import dto.HallUpdateForm;
 
 import java.util.List;
 
@@ -16,15 +15,15 @@ public interface HallService {
 
     /**
      * Update an existing hall
-     * @param hallUpdateForm
+     * @param hall
      */
-    void update(HallUpdateForm hallUpdateForm) ;
+    void update(Hall hall) ;
 
     /**
      * soft-delete a hall by setting its isActive flag to false
-     * @param id
+     * @param hall
      */
-    void delete(int id) ;
+    void delete(Hall hall) ;
 
     /**
      * retrieves a hall by its id

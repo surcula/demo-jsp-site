@@ -1,7 +1,7 @@
 package dto;
 
-import com.example.demo1.Field;
-import com.example.demo1.Sport;
+import entities.Field;
+import entities.Sport;
 
 import java.time.Instant;
 
@@ -17,9 +17,9 @@ public class SportFieldCreateForm {
 
     private Instant dateStart;
 
-    private Integer day;
+    private int day;
 
-    private Boolean isActive = true;
+    private boolean active = true;
 
     public Sport getSport() {
         return sport;
@@ -61,19 +61,18 @@ public class SportFieldCreateForm {
         this.dateStart = dateStart;
     }
 
-    public Integer getDay() {
+    public int getDay() {
         return day;
     }
 
-    public void setDay(Integer day) {
+    public void setDay(int day) {
         this.day = day;
     }
-
-    public Boolean getIsActive() {
-        return isActive;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

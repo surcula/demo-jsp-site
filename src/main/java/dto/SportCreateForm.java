@@ -1,21 +1,20 @@
 package dto;
 
-import java.math.BigDecimal;
 
 public class SportCreateForm {
 
 
     private String sportName;
 
-    private Boolean isActive = true;
+    private boolean active = true;
 
-    private BigDecimal price;
+    private double price;
 
-    public BigDecimal getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -27,12 +26,12 @@ public class SportCreateForm {
         this.sportName = sportName;
     }
 
-    public Boolean getIsActive() {
-        return isActive;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
 

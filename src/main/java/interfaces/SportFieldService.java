@@ -1,8 +1,7 @@
 package interfaces;
 
-import com.example.demo1.SportField;
+import entities.SportField;
 import dto.SportFieldCreateForm;
-import dto.SportFieldUpdateForm;
 
 import java.util.List;
 
@@ -16,15 +15,15 @@ public interface SportFieldService {
 
     /**
      * Update an existing sportField
-     * @param sportFieldUpdateForm
+     * @param sportField
      */
-    void update(SportFieldUpdateForm sportFieldUpdateForm) ;
+    void update(SportField sportField) ;
 
     /**
      * soft-delete a sportField by setting its isActive flag to false
-     * @param id
+     * @param sportField
      */
-    void delete(int id) ;
+    void delete(SportField sportField) ;
 
     /**
      * retrieves a sportField by its Id

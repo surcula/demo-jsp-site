@@ -192,7 +192,6 @@ CREATE TABLE IF NOT EXISTS `historicals_sports_prices` (
   `begin_date` date NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `sport_id` int(11) DEFAULT NULL,
-  `is_active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `sport_id` (`sport_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

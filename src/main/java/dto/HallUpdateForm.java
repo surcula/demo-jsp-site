@@ -2,17 +2,17 @@ package dto;
 
 public class HallUpdateForm {
 
-    private Integer id;
+    private int id;
 
     private String hallName;
 
-    private Boolean isActive = true;
+    private boolean active = true;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -23,12 +23,11 @@ public class HallUpdateForm {
     public void setHallName(String hallName) {
         this.hallName = hallName;
     }
-
-    public Boolean getIsActive() {
-        return isActive;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

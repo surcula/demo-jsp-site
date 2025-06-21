@@ -1,8 +1,7 @@
 package mappers;
 
-import com.example.demo1.SportField;
 import dto.SportFieldCreateForm;
-import dto.SportFieldUpdateForm;
+import entities.SportField;
 
 public class SportFieldMapper {
 
@@ -19,22 +18,8 @@ public class SportFieldMapper {
         sportField.setDateStart(sportFieldCreateForm.getDateStart());
         sportField.setStartTime(sportFieldCreateForm.getStartTime());
         sportField.setEndTime(sportFieldCreateForm.getEndTime());
-        sportField.setIsActive(sportFieldCreateForm.getIsActive());
+        sportField.setActive(sportFieldCreateForm.isActive());
         return sportField;
     }
 
-    /**
-     * update sportfield
-     * @param sportField
-     * @param sportFieldUpdateForm
-     */
-    public static void fromUpdateForm(SportField sportField,SportFieldUpdateForm sportFieldUpdateForm) {
-        sportField.setField(sportFieldUpdateForm.getField());
-        sportField.setSport(sportFieldUpdateForm.getSport());
-        sportField.setDay(sportFieldUpdateForm.getDay());
-        sportField.setDateStart(sportFieldUpdateForm.getDateStart());
-        sportField.setStartTime(sportFieldUpdateForm.getStartTime());
-        sportField.setEndTime(sportFieldUpdateForm.getEndTime());
-        sportField.setIsActive(sportFieldUpdateForm.getIsActive());
-    }
 }

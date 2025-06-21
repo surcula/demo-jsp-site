@@ -1,7 +1,7 @@
 package servlets;
 
 import services.CountryService;
-import com.example.demo1.Country;
+import entities.Country;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -45,23 +45,23 @@ public class CountriesServlet extends HttpServlet {
         if(editParam != null){
             Country country = countryService.GetOne(Integer.parseInt(editParam));
             request.setAttribute("country", country);
-            request.setAttribute("content", "addCountry.jsp");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/template.jsp");
+            request.setAttribute("content", "/views/addCountry.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/views/template/template.jsp");
             dispatcher.forward(request, response);
         }
         if (idParam != null){
             Country countries = countryService.GetOne(Integer.parseInt(idParam));
             request.setAttribute("countries", countries);
-            request.setAttribute("content","detailsCountry.jsp");
+            request.setAttribute("content","/views/detailsCountry.jsp");
             // Forward vers la JSP
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/template.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/views/template/template.jsp");
             dispatcher.forward(request, response);
         }else{
             List<Country> countries = countryService.GetAll();
             request.setAttribute("countries", countries);
-            request.setAttribute("content","listCountries.jsp");
+            request.setAttribute("content","/views/listCountries.jsp");
             // Forward vers la JSP
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/template.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/views/template/template.jsp");
             dispatcher.forward(request, response);
         }
 

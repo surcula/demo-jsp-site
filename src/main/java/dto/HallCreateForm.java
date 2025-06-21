@@ -7,7 +7,7 @@ public class HallCreateForm {
 
     private String hallName;
 
-    private Boolean isActive = true;
+    private boolean active = true;
 
     public String getHallName() {
         return hallName;
@@ -17,11 +17,11 @@ public class HallCreateForm {
         this.hallName = hallName;
     }
 
-    public Boolean getIsActive() {
-        return isActive;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

@@ -1,8 +1,7 @@
 package services;
 
-import com.example.demo1.Field;
+import entities.Field;
 import dto.FieldCreateForm;
-import dto.FieldUpdateForm;
 import interfaces.FieldService;
 import mappers.FieldMapper;
 
@@ -22,19 +21,13 @@ public class FieldServiceImpl implements FieldService {
     }
 
     @Override
-    public void update(FieldUpdateForm fieldUpdateForm) {
-        Field field = em.find(Field.class, fieldUpdateForm.getId());
-        if(field == null)throw new IllegalArgumentException("not found");
-        FieldMapper.fromUpdateForm(field,fieldUpdateForm);
+    public void update(Field field) {
+        em.merge(field);
     }
 
     @Override
-    public void delete(int id) {
-
-        Field field = em.find(Field.class, id);
-        if(field == null) throw new IllegalArgumentException("Not found");
-        if (!field.getIsActive()) throw new IllegalStateException("Field with id " + id + " is not active");
-        field.setIsActive(false);
+    public void delete(Field field) {
+        em.merge(field);
     }
 
     @Override

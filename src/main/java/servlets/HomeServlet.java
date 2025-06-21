@@ -9,8 +9,9 @@ import java.io.IOException;
 public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("content", "index.jsp");
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/template.jsp");
+
+        request.setAttribute("content", "/views/home.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/template/template.jsp");
         dispatcher.forward(request, response);
     }
 
