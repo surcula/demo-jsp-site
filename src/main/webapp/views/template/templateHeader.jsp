@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,3 +19,6 @@
 <body>
 <jsp:include page="/views/navbar/navbar.jsp" />
 
+<c:if test="${sessionScope.role == 'ADMIN'}">
+    <jsp:include page="/views/navbar/navbarAdmin.jsp" />
+</c:if>
